@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+p {
+  width: 25vw;
+  text-align: center;
+  word-wrap: break-word;
+  border-right: solid 1px black;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.list-button {
+  height: 20px;
+  width: 50px;
+  margin: 5px;
+}
