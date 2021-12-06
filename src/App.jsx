@@ -1,10 +1,9 @@
-
 import './App.css';
-
-import { useState } from "react"
+import { useState } from "react";
+import List from "./components/List";
 
 function App() {
-  const [list, setList] = useState(["do this", "do that"]);
+  const [list, setList] = useState([]);
   const [input, setInput] = useState("");
 
   const addHandler = () => {
@@ -31,20 +30,13 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>To do list</h1>
-      <input type="text" value={input} onChange={changeHandler} onKeyPress={keypressHandler} />
-      <button onClick={addHandler}>Add to list</button>
-      <div className="todo-list">
-        {list.map((item, index) => {
-                  return (
-                    <div key={index} className="list-item">
-                      <p>{item}</p>
-                      <button className="list-button" onClick={() => removeHandler(index)} >Done</button>
-                    </div>
-                  )
-              })}
+      <div className="inputBar">
+        <input type="text" value={input} onChange={changeHandler} onKeyPress={keypressHandler} />
+        <button onClick={addHandler}>Add to list</button>
       </div>
+      <List items={list} removeHandler={removeHandler} />
     </div>
   )
 }
