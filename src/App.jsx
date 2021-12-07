@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>To do list</h1>
+      <h1>Todo list</h1>
       <div className="inputBar">
         <input type="text" value={input} onChange={changeHandler} onKeyPress={keypressHandler} />
         <button onClick={addHandler}>Add to list</button>
